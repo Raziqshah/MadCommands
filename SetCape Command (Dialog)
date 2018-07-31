@@ -1,0 +1,40 @@
+
+cmd add setcape %player% = %p% 
+cmd add setcape if varset(%args%[1]) then %player% = %args%[1] 
+cmd add setcape %gui%["type"] = \"form\" 
+cmd add setcape %gui%["title"] = \"§aCape Selection\" 
+cmd add setcape %gui%["content"] = \"Choose a free cape to use!\" 
+cmd add setcape %warp0%["text"] = \"§cCancel\" 
+cmd add setcape %warp1%["text"] = \"Minecon 2011 Cape\"
+cmd add setcape %img1%["type"] = \"url\" 
+cmd add setcape %img1%["data"] = \"http://i67.tinypic.com/2it4neh.png\" 
+cmd add setcape %warp1%["image"] = %img1% 
+cmd add setcape %warp2%["text"] = \"Minecon 2012 Cape\" 
+cmd add setcape %img2%["type"] = \"url\" 
+cmd add setcape %img2%["data"] = \"http://i67.tinypic.com/23tjwwp.png\"
+cmd add setcape %warp2%["image"] = %img2% 
+cmd add setcape %warp3%["text"] = \"Minecon 2016 Cape\" 
+cmd add setcape %img3%["type"] = \"url\" 
+cmd add setcape %img3%["data"] = \"http://i65.tinypic.com/2imalb5.png\" 
+cmd add setcape %warp3%["image"] = %img3% 
+cmd add setcape %warp4%["text"] = \"§c§lRemove Cape\" 
+cmd add setcape %buttons%[] = %warp0% 
+cmd add setcape %buttons%[] = %warp1% 
+cmd add setcape %buttons%[] = %warp2% 
+cmd add setcape %buttons%[] = %warp3% 
+cmd add setcape %buttons%[] = %warp4% 
+cmd add setcape %gui%["buttons"]= %buttons% 
+cmd add setcape %response% = dialog(%player%, %gui%) 
+cmd add setcape if varset(%response%) = 0 then exit
+cmd add setcape if %response% = 1 then goto 33
+cmd add setcape if %response% = 2 then goto 35
+cmd add setcape if %response% = 3 then goto 37
+cmd add setcape if %response% = 4 then goto 39
+cmd add setcape exit
+cmd add setcape asop /cape set %p% 0
+cmd add setcape exit
+cmd add setcape asop /cape set %p% 1
+cmd add setcape exit
+cmd add setcape asop /cape set %p% 2
+cmd add setcape exit
+cmd add setcape asop /cape remove %p%
