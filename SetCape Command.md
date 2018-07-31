@@ -1,3 +1,4 @@
+* Code By ProMasterBOY
 cmd add setcape %player% = %p% 
 cmd add setcape if varset(%args%[1]) then %player% = %args%[1] 
 cmd add setcape %gui%["type"] = \"form\" 
